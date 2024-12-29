@@ -1,0 +1,64 @@
+.forgot-username {
+    max-width: 400px;
+    margin: 5em auto;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .forgot-username h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .forgot-username p {
+    font-size: 1em;
+    color: #666;
+    text-align: center;
+  }
+  
+  .forgot-username form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .forgot-username form div {
+    margin-bottom: 1em;
+  }
+  
+  .forgot-username label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .forgot-username input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+  }
+  
+  .forgot-username button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .forgot-username button:hover {
+    background-color: #0056b3;
+  }
+  
+  .forgot-username form div + div {
+    margin-top: 1em;
+  }
+  

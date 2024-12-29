@@ -1,0 +1,20 @@
+nav {
+    background-color: #6f0ed5;
+    padding: 1em;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  nav ul li a.active {
+    font-weight: bold;
+  }
+  

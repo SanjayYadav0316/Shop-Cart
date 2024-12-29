@@ -1,0 +1,61 @@
+<h2>Checkout</h2>
+
+<div class="checkout-form">
+  <form (ngSubmit)="onCheckout()" #checkoutForm="ngForm">
+    <label for="name">Name:</label>
+    <input 
+      type="text" 
+      id="name" 
+      [(ngModel)]="userDetails.name" 
+      name="name" 
+      required 
+      #name="ngModel" 
+      [ngClass]="{'is-invalid': name.invalid && name.touched, 'is-valid': name.valid}">
+    
+    <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
+    </div>
+    
+    <label for="address">Address:</label>
+    <textarea 
+      id="address" 
+      [(ngModel)]="userDetails.address" 
+      name="address" 
+      required 
+      #address="ngModel"
+      [ngClass]="{'is-invalid': address.invalid && address.touched, 'is-valid': address.valid}">
+    </textarea>
+    <div *ngIf="address.invalid && address.touched" class="invalid-feedback">
+      <div *ngIf="address.errors?.['required']">Address is required.</div>
+    </div>
+    
+    <label for="paymentMethod">Payment Method:</label>
+    <select 
+      id="paymentMethod" 
+      [(ngModel)]="userDetails.paymentMethod" 
+      name="paymentMethod" 
+      required 
+      #paymentMethod="ngModel"
+      [ngClass]="{'is-invalid': paymentMethod.invalid && paymentMethod.touched, 'is-valid': paymentMethod.valid}">
+      <option value="" disabled selected>Select a payment method</option>
+      <option value="Card">Card</option>
+      <option value="UPI">UPI</option>
+    </select>
+    <div *ngIf="paymentMethod.invalid && paymentMethod.touched" class="invalid-feedback">
+      <div *ngIf="paymentMethod.errors?.['required']">Please choose a payment option.</div>
+    </div>
+    
+    <button type="submit" [disabled]="checkoutForm.invalid">Proceed to Pay</button>
+  </form>
+</div>
+
+<div class="shopping-cart-summary">
+  <h3>Order Summary</h3>
+  <div *ngFor="let product of cart" class="shopping-cart">
+    <h4>{{ product.name }}</h4>
+    <p>{{ product.price | currency:'INR':'symbol':'1.2-2' }}</p>
+  </div>
+  <div class="total-sum">
+    <p>Total: {{ totalSum | currency:'INR':'symbol':'1.2-2' }}</p>
+  </div>
+</div>
